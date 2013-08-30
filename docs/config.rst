@@ -1,14 +1,14 @@
 .. _configuration:
 
-Configuration
+配置
 ===============
 
-Catsup's configuration file is a vaild JSON file.
+Catsup 的配置文件是一个标准的 JSON 文件
 
-Overview
+总览
 ------------
 
-The default config file looks like :
+默认的配置文件看起来是这样的 :
 
 .. literalinclude:: config.json
     :language: json
@@ -17,9 +17,9 @@ The default config file looks like :
 Site & Author & Config
 ------------------------
 
-It’s easy enough to configure these by yourself.
+这几项配置起来十分容易。
 
-If you're using Google Analytics, remember to change ``config.analytics`` ::
+如果你要用 Google Analytics 的话，记得修改 ``config.analytics`` ::
 
     "config": {
             "source": "posts",
@@ -32,9 +32,9 @@ If you're using Google Analytics, remember to change ``config.analytics`` ::
 Permalink
 -------------
 
-You can easily change any page's permalink in ``config.permalink`` .
+通过修改 ``config.permalink`` ，你可以轻松的自定义任何页面的永久链接。
 
-There are some permalink styles for posts you may like :
+下面这些 Post 页面的永久链接风格比较有参考价值 :
 
 + ``/{title}.html``
 + ``{filename}.html``
@@ -43,16 +43,16 @@ There are some permalink styles for posts you may like :
 + ``/{date}/{filename}/``
 + ``/{datetime.year/{filename}/``
 
-Note that permalink defined in :ref:`Post Meta <post-meta>` will be used first.
+注意，在 :ref:`文章元数据 <post-meta>` 中定义的永久链接会被优先使用。
 
-For example,  you defined your post permalink like ::
+比如说，在配置文件里，你自定义了 Post 页面的永久链接 ::
 
     "permalink": {
         "post": "/{title}/",
         "feed": "/feed.xml"
     },
 
-And in your post, you defined a permalink in :ref:`Post Meta <post-meta>` ::
+然后在你的某篇文章中，你在 :ref:`元数据 <post-meta>` 中自定义了一个永久链接 ::
 
     # About
 
@@ -64,14 +64,14 @@ And in your post, you defined a permalink in :ref:`Post Meta <post-meta>` ::
 
     This is a about page
 
-In the end the permalink of this page will be ``/about-the-site`` .
+那么，这篇文章的永久链接将会是 ``/about-the-site`` .
 
 Comment
 ----------
 
-Catsup supports two comment systems: `Disqus <http://disqus.com>`_ and `Duoshuo <http://duoshuo.com>`_
+Catsup 支持两种评论系统: `Disqus <http://disqus.com>`_ 和 `多说 <http://duoshuo.com>`_
 
-If you prefer Duoshuo to Disqus, just change your comment system to it ::
+如果你更喜欢多说的话，可以轻松的把评论系统设置成多说 ::
 
     "comment": {
         "allow": true,
@@ -79,7 +79,7 @@ If you prefer Duoshuo to Disqus, just change your comment system to it ::
         "shortname": "catsup"
     },
 
-If you have your own shortname, remember to change ``comment.shortname`` to your own ::
+如果你在评论系统中有自己的站点的话，记得把 ``comment.shortname`` 改成你自己的 ::
 
     "comment": {
         "allow": true,
@@ -87,17 +87,17 @@ If you have your own shortname, remember to change ``comment.shortname`` to your
         "shortname": "my_site"
     },
 
-If you don't want to allow any comment, just disable it ::
+如果你不希望开启评论系统，那么就关掉它吧 ::
 
     "comment": {
         "allow": false
     },
 
-If you just want some of the posts can't be commented, set ``- comment: disabled`` in :ref:`Post Meta <post-meta>`
+如果你只是希望部分文章不背评论，可以在 :ref:`元数据 <post-meta>` 中设置 ``- comment: disabled``
 
 Deploy & Theme
 ----------------
 
-It’s easy enough to configure these by yourself.
+这几项配置起来十分容易。
 
-For more information, read about :ref:`Deploy Support <deploy>` and your theme's document.
+如果还不太明白的话，去看看 :ref:`部署支持 <deploy>` 和你主题的文档吧。
