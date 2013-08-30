@@ -1,6 +1,6 @@
 # Catsup 中文文档
 
-这里是 [Catsup](https://github.com/whtsky/catsup) 的中文文档，主要由 [whtsky](http://whouz.com) 和 [JmPotato](http://ipotato.me) 维护。
+这里是 [Catsup](https://github.com/whtsky/catsup) 的中文文档，主要由 [whtsky](http://whouz.com) 维护。
 
 文档在这里： http://catsup-zh.readthedocs.org/en/latest/
 
