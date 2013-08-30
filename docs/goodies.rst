@@ -3,54 +3,56 @@ Goodies
 
 .. _preview-server:
 
-Preview Server
+预览服务器
 ----------------
-Preview your site without deploy ::
+预览服务器可以让你不用部署就看到自己的站点 ::
 
     catsup server
     catsup server -p 8000
 
-Preview server will regenerate your site when :
+当
 
-+ Your source folder (``posts`` by default) changes (Like add a new post or modify one)
-+ Your theme folder changes(Useful for writing themes for Catsup)
-+ Catsup program changes(Useful for writing codes for Catsup)
++ 站点的源文件夹(默认是 ``posts`` ) 中发生更改的时候（比如创建新的文章，修改已有的文章）
++ 你的主题文件夹中发生更改的时候（为 Catsup 写主题的时候会很有用）
++ Catsup 主程序发生变化（为 Catsup 编写代码的时候会很有用）
 
-.. note:: Catsup will ignore ``site.url`` and build your site into a temporary directory when running Preview Server.
+的时候， 预览服务器会自动重新生成你的站点。
+
+.. note:: 当运行预览服务器的时候， Catsup 会忽视掉 ``site.url`` 并把生成的文件保存到一个临时文件夹中。
 
 .. _deploy:
 
-Deploy Support
+部署支持
 ----------------
-Help you deploy your site via git or rsync ::
+可以帮助你通过 Git 或 rsync 快速部署你的站点 ::
 
-    catsup deploy # Deploy via default way
-    catsup rsync # Deploy via rsync
-    catsup git # Deploy via git
+    catsup deploy # 通过默认方式部署
+    catsup rsync # 通过 rsync 部署
+    catsup git # 通过 git 部署
 
 
 Webhook
 ---------
-If you host your site's source on GitHub or Bitbucket, Catsup can generate your site when you push to your repo.
+如果你把站点的源文件保存在 GitHub 或 Bitbucket 上， Catsup 可以在你 push 到 Git 仓库的时候自动更新、生成你的站点。
 
-You need to clone your repo and start webhook server ::
+你需要把站点的 repo clone 下来并开启 Webhook 服务 ::
 
     git clone git://path/to/your/site.git
     cd site
     catsup webhook -p 12580
 
-.. attention:: Catsup webhook is not a daemon process.That means you may need to use Supervisor_ to turn it into daemon.
+.. attention:: Catsup 的 webhook 功能并不会以守护进程运行，这意味着你可能需要 Supervisor_ 这类工具来守护 webhook
 
-Then configure webhook on GitHub or Bitbucket. Here we use GitHub as an example:
+之后你需要在 GitHub 或 BitBucket 中做一些配置，这里以 GitHub 为例：
 
-+ Go to the “admin” page for your project
-+ Click “Service Hooks”
-+ In the available service hooks, click “WebHook URLs“
-+ Type your url [1]_
-+ Click “Update Settings”
++ 打开项目的 "Admin" 页面
++ 点击 “Service Hooks”
++ 在 "available service hooks" 中, 点击 “WebHook URLs“
++ 输入 Webhook URL [1]_
++  点击 “Update Settings”
 
-.. [1] If your server's ip is 1.2.3.4 , you can type ``http://1.2.3.4:12580/webhook``
+.. [1] 如果你服务器的 IP 地址为 1.2.3.4 , 你应该输入 ``http://1.2.3.4:12580/webhook``
 
-Then when you push to GitHub, Catsup will pull and generate your site.
+之后每当你 push 到 GitHub, Catsup 都会自动更新并生成你的站点。
 
 .. _Supervisor: http://pypi.python.org/pypi/supervisor/
