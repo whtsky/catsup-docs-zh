@@ -1,14 +1,14 @@
 .. _post-syntax:
 
-Post Syntax
+文章语法
 =============
 
-Overview
+总览
 -----------
 
-A post's extension should be either ``.md`` or ``.markdown`` .
+一个文章的扩展名应该是 ``.md`` 或者 ``.markdown`` .
 
-A sample post looks like ::
+一个 Hello World 文章看起来是这样的 ::
 
     # Hello, World!                          <---- This is title
 
@@ -26,65 +26,65 @@ A sample post looks like ::
     print("I love python")
     ```
 
-A post consists of three parts:
+一篇文章由三部分构成:
 
-+ Title
-+ Meta
-+ Content
++ 标题
++ 元数据
++ 正文
 
-Title
+标题
 --------
 
-Title should always on the first line and starts with ``#``
+标题应该始终在文章的第一行，以 ``#`` 起头。
 
 .. _post-meta:
 
-Meta
+元数据
 -------
 
-Meta is some information about the post. It's below title and above the separator.
+元数据是关于文章的一些信息，元数据位于标题之下，分隔符之上。
 
 
-+ time: When the post is written. like ``2013-08-25 11:10``
-+ tags: Tags of the post. Separated by comma, like ``Python, Program``
-+ type: Set to ``page`` to turn this post into a page.
-+ description: Description of the post.
-+ comment: Set to ``disabled`` to forbid comment
-+ permalink: Permalink to the post, link ``/this-post``
++ time: 文章是何时写成的，比如 ``2013-08-25 11:10``
++ tags: 文章的 Tag ，以英文逗号分割，比如 ``Python, Program``
++ type: 设置为 ``page`` 来把这篇文章转换为一个独立页面
++ description: 文章的描述
++ comment: 设置为 ``disabled`` 来禁止评论
++ permalink: 文章的永久链接地址，比如 ``/this-post``
 
-The separator
+分隔符
 ---------------
 
-The separator separates meta and content. It should be at least *three* ``-`` ::
+分隔符将文章元数据与正文分割开。分隔符应该至少有三个 ``-`` ::
 
     ---
 
-It's okay to make it longer ::
+当然他也可以更长 ::
 
     ----------------
 
-Content
+正文
 -----------
 
-Everything below the separator is the content. Content should be written in Markdown.
+分隔符下的一切都是正文，正文应该以 Markdown 形式书写。
 
-Code Highlight
+代码高亮
 -----------------
 
-Catsup supports GitHub's style code highlight, like this ::
+Catsup 支持 GitHub 风格的代码高亮，就像这样 ::
 
     ```python
     print("Hello World!")
     ```
 
 
-Page
+独立页面
 --------
 
-Page is a kind of post. Turn an ordinary post into page by adding ``- type: page`` in post's meta.
+独立页面是一种特殊的文章。可以通过在元数据中添加 ``- type: page`` 将一篇普通文章转换为元数据。
 
-So, what's the difference between page and post?
+普通文章和独立页面之间有什么区别呢？
 
-+ Page do not have tags
-+ Page do not display in Archives Pages and Index Pages
-+ In general, pages will be linked in every page's navigation.
++ 独立页面没有 Tags
++ 独立页面不会在归档页面和分页页面中出现
++ 一般来说，每一页的导航部分都会有独立页面的连接
