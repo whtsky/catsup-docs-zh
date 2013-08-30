@@ -1,9 +1,9 @@
-Welcome to Catsup
+欢迎来到 Catsup
 ==================================
 
-Catsup is a lightweight static website generator which aims to be simple and elegant.
+Catsup 是一个以简洁、优雅为目标的轻量级静态站点生成器。
 
-User’s Guide
+用户手册
 ---------------
 
 .. toctree::
