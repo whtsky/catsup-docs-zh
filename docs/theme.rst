@@ -1,40 +1,40 @@
-Theme
+主题
 ========
 
-Overview
+总览
 ---------
 
-Install a theme ::
+安装一个主题 ::
 
     catsup install git_repo
 
-For instance, install `Theme Clean <https://github.com/whtsky/catsup-theme-clean>`_ ::
+比如，安装 `Theme Clean <https://github.com/whtsky/catsup-theme-clean>`_ ::
 
     catsup install git@github.com:whtsky/catsup-theme-clean.git
 
-Update a installed theme ::
+更新一个已安装的主题 ::
 
     catsup install theme_name
 
-For instance, update clean ::
+比如，更新 Clean  ::
 
     catsup install clean
 
-List all themes installed ::
+列出所有已安装的主题 ::
 
     catsup themes
 
-Structure
+结构
 ----------
 
-Catsup uses Jinja2 as a Template Engine.You need to learn it if you want to design your own theme.
+Catsup 使用 Jinja2 模板引擎。如果你想要开发自己的主题，你需要先了解 Jinja 2 。
 
-You can learn how to design your theme by reading source:
+你可以看看以下几个主题来了解如何开发自己的 Catsup 主题 ：
 
 + `Theme Clean <https://github.com/whtsky/catsup-theme-clean>`_
 + `Theme Sealscript <https://github.com/whtsky/catsup-theme-sealscript>`_
 
-A catsup theme should look like ::
+一个 Catsup 主题看起来是这样的 ::
 
     ├── README.md                      <-------- how to install/customize your theme.
     ├── static                         <-------- static files
@@ -53,10 +53,10 @@ A catsup theme should look like ::
     └── theme.py                       <--------- meta file
 
 
-Meta File
+元数据
 -----------
 
-A demo meta file ::
+一个主题元数据文件的例子 ::
 
     name = 'sealscript'
     author = 'Lyric'
@@ -66,7 +66,7 @@ A demo meta file ::
         "github": "whtsky",
     }
 
-A theme meta consists of :
+一个主题元数据包括 :
 
 + name
 + author
@@ -75,45 +75,45 @@ A theme meta consists of :
 + vars
 
 
-Variables
+变量
 ----------
 
-Global Variables
+全局变量
 ~~~~~~~~~~~~~~~~~~
 
-+ generator: Catsup's Generator instance.
-+ site: ``site`` in user's config file.
-+ author: ``author`` in user's config file.
-+ config: ``config`` in user's config file.
-+ comment: ``commment`` in user's config file.
-+ theme: ``theme.vars`` in user's config file.
-+ pages: All the pages of the current site.
++ generator: Catsup 的 Generator 实例.
++ site: 配置文件中的 ``site`` .
++ author: 配置文件中的 ``author`` .
++ config: 配置文件中的 ``config`` .
++ comment: 配置文件中的 ``commment`` .
++ theme: 配置文件中的 ``theme.vars`` .
++ pages: 当前站点的所有独立页面
 
-Templatable Variables
+模板变量
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Templatable variables are only accessed in specify templates.
+只有几个模板有模板变量。
 
-+ pagination: available in ``page.html``
-+ post: available in ``post.html``
-+ permalink: permalink of the current page ::
++ pagination: ``page.html`` 中特有的模板变量。
++ post: ``post.html`` 中特有的模板变量。
++ permalink: 当前页面的永久链接 ::
 
     <link rel="canonical" href="{{ permalink }}"/>
 
 
-Built-in Functions
+内置函数
 ------------------------
 
 static_url
 ~~~~~~~~~~~~~~~~~~
-Static URL returns a static URL for the given relative static file path. ::
+Static URL 返回给定静态文件的 URL  ::
 
     <link rel="stylesheet" href="{{ static_url("css/style.css") }}" type="text/css" />
 
 url_for
 ~~~~~~~~~~~~~~~~~~~
 
-url for returns the permalink of the given object or string ::
+url for 返回给定对象的永久链接地址 ::
 
     <a href="{{ url_for('index') }}">{{ site.name }}</a>
 
@@ -121,22 +121,22 @@ url for returns the permalink of the given object or string ::
 
     <link rel="alternate" type="application/rss+xml" href="{{ url_for('feed') }}" title="{{ site.name }}" />
 
-Filters
+过滤器
 -----------
 
-Every function in ``filters.py`` will be a filter.Catsup also has some build-in filter:
+``filters.py`` 中的所有函数都会被注册为过滤器。 Catsup 也内置了一些过滤器：
 
 + xmldatetime
 
-Template Marco
+模板宏
 ---------------
-Catsup has some powerful marco to make your job easier
+Catsup 有一些强大的模板宏，可以让你更加轻松的编写模板。
 
-+ render_comment(post): Render comment of the given post.
-+ meta(post): Render meta tags of given post.Should be used id ``<head>``.
-+ analytics(): Render analytics code.
++ render_comment(post): 为给定的文章渲染评论
++ meta(post): 为给定的文章渲染 meta 标签。应当在 <head> 中被调用。
++ analytics(): 渲染统计代码。
 
-An example ``post.html`` template using built-in marco ::
+使用内置的模板宏的 ``post.html`` 例子 ::
 
     <html>
         <head>
