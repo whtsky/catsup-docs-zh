@@ -41,7 +41,7 @@ Permalink
 + ``/{date}/{title}/``
 + ``/{filename}/``
 + ``/{date}/{filename}/``
-+ ``/{datetime.year/{filename}/``
++ ``/{datetime.year}/{filename}/``
 
 注意，在 :ref:`文章元数据 <post-meta>` 中定义的永久链接会被优先使用。
 

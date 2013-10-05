@@ -15,4 +15,5 @@ Catsup 是一个以简洁、优雅为目标的轻量级静态站点生成器。
    config
    theme
    goodies
+   upgrading
    changelog
