@@ -22,10 +22,12 @@ Site & Author & Config
 如果你要用 Google Analytics 的话，记得修改 ``config.analytics`` ::
 
     "config": {
-            "source": "posts",
-            "output": "deploy",
-            "static_prefix": "/static/",
-            "analytics": "UA-33275966-1"
+        "source": "posts",
+        "static_source": "static",
+        "output": "deploy",
+        "static_output": "deploy/static",
+        "static_prefix": "/static/",
+        "analytics": ""
     },
 
 

@@ -3,10 +3,18 @@
 文章语法
 =============
 
-总览
------------
+Catsup 目前支持三种格式的文章： :ref:`Markdown <post-markdown-syntax>`, :ref:`纯文本 <post-text-syntax>` 和 :ref:`HTML <post-html-syntax>`.
 
-一个文章的扩展名应该是 ``.md`` 或者 ``.markdown`` .
+
+.. _post-markdown-syntax:
+
+Markdown 格式的文章
+-------------------
+
+总览
+~~~~~~~~~
+
+文章的扩展名应为 ``.md`` 或 ``.markdown`` .
 
 一个 Hello World 文章看起来是这样的 ::
 
@@ -29,21 +37,81 @@
 一篇文章由三部分构成:
 
 + 标题
-+ 元数据
++ :ref:`元数据 <post-meta>`
 + 正文
 
 标题
---------
+~~~~~~~~~~~~~~~~~~~~~~
 
 标题应该始终在文章的第一行，以 ``#`` 起头。
+
+正文
+~~~~~~~~~~~~~~~~~~~~~~
+
+分隔符下的一切都是正文，正文应该以 Markdown 形式书写。
+
+代码高亮
+~~~~~~~~~~~~~~~~~~~~~~
+
+Catsup 支持 GitHub 风格的代码高亮，就像这样 ::
+
+    ```python
+    print("Hello World!")
+    ```
+
+
+.. _post-text-syntax:
+
+纯文本格式的文章
+-------------------
+
+有时候你只是想写些东西而不想去考虑文章的格式，那么你应该选择纯文本格式的文章。
+
+纯文本格式的文章的扩展名应该是 ``.txt`` 。
+
+最简单的纯文本格式的文章看起来是这样的 ::
+
+    Hello!
+    This is a text post.
+
+如果你想要加一些元数据的话，你应该使用 YAML 格式的元数据 ::
+
+    ---
+    title: Hello, World!
+    tags: Hello, World
+    time: 2014-01-04 20:56
+    ---
+
+    Hello, World! I'm a text post.
+
+
+.. _post-html-syntax:
+
+HTML 格式的文章
+--------------
+
+HTML 格式的文章就像 :ref:`纯文本格式的文章 <post-text-syntax>`, 但是你可以在文章正文中使用 HTML .
+
+HTML 格式的文章的扩展名应该是 ``.html`` .
+
+文章样例 ::
+
+    ---
+    title: Hello, World!
+    tags: Hello, World
+    time: 2014-01-04 20:56
+    ---
+
+    <p>I'm writing HTML in catsup</p>
+
 
 .. _post-meta:
 
 元数据
 -------
 
-元数据是关于文章的一些信息，元数据位于标题之下，分隔符之上。
-
+元数据是关于文章的一些信息。
+元数据不是必须的，如果你的文章有元数据的话，记得在元数据下面加上 :ref:`分隔符 <post-separator>`
 
 + time: 文章是何时写成的，比如 ``2013-08-25 11:10``
 + tags: 文章的 Tag ，以英文逗号分割，比如 ``Python, Program``
@@ -52,6 +120,7 @@
 + comment: 设置为 ``disabled`` 来禁止评论
 + permalink: 文章的永久链接地址，比如 ``/this-post``
 
+.. _post-separator:
 分隔符
 ---------------
 
@@ -63,19 +132,6 @@
 
     ----------------
 
-正文
------------
-
-分隔符下的一切都是正文，正文应该以 Markdown 形式书写。
-
-代码高亮
------------------
-
-Catsup 支持 GitHub 风格的代码高亮，就像这样 ::
-
-    ```python
-    print("Hello World!")
-    ```
 
 
 独立页面

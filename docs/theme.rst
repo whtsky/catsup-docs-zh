@@ -10,14 +10,6 @@
 
 比如，安装 `Theme Clean <https://github.com/whtsky/catsup-theme-clean>`_ ::
 
-    catsup install git@github.com:whtsky/catsup-theme-clean.git
-
-更新一个已安装的主题 ::
-
-    catsup install theme_name
-
-比如，更新 Clean  ::
-
     catsup install clean
 
 列出所有已安装的主题 ::
