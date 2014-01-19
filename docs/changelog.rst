@@ -5,14 +5,14 @@ Version 0.3.0
 --------------
 
 + 添加多格式的文章支持.
-+ 添加 ``config.config.static_source``.
-+ 添加 ``config.config.static_output``.
++ 添加 ``config.config.static_source`` .
++ 添加 ``config.config.static_output`` .
 + 支持无元素的文章.
 + 支持为文章自定义永久链接.
 + 支持 TXT 格式的文章.
 + 支持 HTML 格式的文章.
 + 支持 YAML 格式的元素.
-+ 重写 `catsup install`
++ 重写 `catsup install` .
 + 正确的 Twitter Card URL 支持.
 + 移除基于文件的缓存系统.
 + 提高描述的创造.
