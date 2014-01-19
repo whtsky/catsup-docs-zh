@@ -6,7 +6,7 @@
 
 如果你对 Python 足够熟悉，我强烈建议你把所有东西都装到 Virtualenv 里面。
 
-如果你在使用 OS X ，请确保你安装了 *Command Line Tools* .
+如果你使用 OS X ，请确保你安装了 *Command Line Tools* .
 
 使用 Pip 安装
 -------------------------
@@ -23,7 +23,7 @@
 
 用 Git 安装
 -----------------
-使用 Git 安装可以用到最新版本的代码 ::
+使用 Git 安装可以获得最新版本 ::
 
     git clone git://github.com/whtsky/catsup.git
     cd catsup
