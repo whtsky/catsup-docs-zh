@@ -5,8 +5,8 @@ Version 0.3.0
 --------------
 
 + 添加多格式的文章支持.
-+ 添加 ``config.config.static_source`` .
-+ 添加 ``config.config.static_output`` .
++ 添加 ``config.config.static_source``.
++ 添加 ``config.config.static_output``.
 + 支持无元素的文章.
 + 支持为文章自定义永久链接.
 + 支持 TXT 格式的文章.
